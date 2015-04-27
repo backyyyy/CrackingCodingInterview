@@ -32,7 +32,7 @@ public class RemoveElement {
     	
     	// Time Complexity: O(N^2)
     	// Space Complexity: O(1)
-    	
+    	if(A==null||A.length ==0) return 0;
         int i=0, j=0;
         while(j<A.length){
             if(A[j]!=elem){
