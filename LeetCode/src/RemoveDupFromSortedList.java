@@ -19,7 +19,7 @@
  * }
  */
 
-public class RemoveDupSortedList {
+public class RemoveDupFromSortedList {
 	public ListNode deleteDuplicates(ListNode head) {
 		
 		// Time Complexity: O(N)
@@ -57,7 +57,7 @@ public class RemoveDupSortedList {
 		// 3. What else???????????????????????????????
 		
 		ListNode[] list = new ListNode[5];
-		RemoveDupSortedList test = new RemoveDupSortedList();
+		RemoveDupFromSortedList test = new RemoveDupFromSortedList();
 		
 		for(int i = 0; i < 5; i ++){
 			list[i] = new ListNode(i);
