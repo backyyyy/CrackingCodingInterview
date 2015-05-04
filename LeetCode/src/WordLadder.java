@@ -30,5 +30,6 @@ public class WordLadder {
     public int ladderLength(String start, String end, Set<String> dict) {
         if(start == null || end == null || dict == null) return 0;
         
+        return 0;
     }
 }
