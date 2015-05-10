@@ -40,8 +40,6 @@ public class RemoveLinkedListElements {
 		return head;
 	}
 
-	
-	
 	class ListNode {
 		int val;
 		ListNode next;
