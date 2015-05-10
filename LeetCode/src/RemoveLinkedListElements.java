@@ -12,22 +12,35 @@
 public class RemoveLinkedListElements {
 
 	public ListNode removeElements(ListNode head, int val) {
-		if(head == null) return null;
-		ListNode prev = new ListNode(-1);
-		prev.next = head;
-		ListNode cur = prev;
 		
-		while(cur.next != null) {
-			if(cur.next.val == val) {
-				ListNode tmp = cur.next;
-				cur.next = tmp.next;
+		// Time Complexity: O(N)
+		// Space Complexity: O(1)
+		if(head == null) return null;
+		ListNode dummy = new ListNode(-1);
+		dummy.next = head;
+		ListNode cur = head;
+		ListNode prev = dummy;
+		
+		while(cur != null) {
+			if(cur.val == val) {
+				prev.next = cur.next;
+			} else {
+				prev = prev.next;
 			}
-			else {
-				cur = cur.next;
-			}
+			cur = cur.next;
 		}
-		return prev.next;
+		return dummy.next;
     }
+	
+	public ListNode removeElements2(ListNode head, int val) {
+		if(head == null) return null;
+		if(head.val == val) return removeElements2(head.next, val);
+		head.next = removeElements2(head.next,val);
+		
+		return head;
+	}
+
+	
 	
 	class ListNode {
 		int val;
