@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.HashMap;
 
 // Jan 19, 2015
@@ -11,31 +12,45 @@ import java.util.HashMap;
 
 public class MajorityElement {
 
-    public int majorityElement(int[] num) {
+    public int majorityElement(int[] nums) {
 	
     	// Time Complexity: O(N);
-    	// Space Complexity: O(N);
-    	
+    	// Space Complexity: O(N);   	
 		HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
 
-		for(int i=0; i<num.length; i++){	
+		for(int i=0; i<nums.length; i++){	
 			
-			if(map.containsKey(num[i])){
-				map.put(num[i], map.get(num[i]) + 1);
+			if(map.containsKey(nums[i])){
+				map.put(nums[i], map.get(nums[i]) + 1);
 			} else {
-				map.put(num[i], 1);
-				System.out.println("2. map.get(" + num[i] + ")= " + map.get(num[i]));
+				map.put(nums[i], 1);
 			}
 			
-			if(map.get(num[i]) > num.length/2) return num[i];
+			if(map.get(nums[i]) > nums.length/2) return nums[i];
 	    }
 		return -1;
 	}
     
-//    public int majorityElement(int[] num) {
-//    	
-//    }
-//    
+    public int majorityElement2(int[] nums) {
+    	HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
+        for(int i : nums) {
+            if(map.containsKey(i)) map.put(i,map.get(i)+1);
+            else map.put(i,1);
+            
+            if(map.get(i) > nums.length/2) return i;
+        }
+        return -1;  	    	
+    }
+    
+    public int majorityElement3(int[] nums) {
+    	
+    	// Time Complexity: O(NLogN)
+    	// Space Complexity: O(1)
+    	if(nums.length == 1) return nums[0];
+    	Arrays.sort(nums);
+    	return nums[nums.length/2];
+    }
+    
     public static void main(String[] args){
     	
     	// 1. null or empty input;
@@ -50,5 +65,8 @@ public class MajorityElement {
     	MajorityElement test = new MajorityElement();
     	
     	System.out.println(test.majorityElement(input));
+    	System.out.println(test.majorityElement2(input));
+    	System.out.println(test.majorityElement3(input));
+
     }
 }
