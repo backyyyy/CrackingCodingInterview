@@ -8,19 +8,18 @@
 public class LongestCommonPrefix {
 	public String longestCommonPrefix(String[] strs) {
 		
-		// This method seems to work in my PC but cannot pass the test cases in Leetcode
 		if(strs == null || strs.length == 0) return "";
 		if(strs.length == 1) return strs[0];
 		
 		int length = 0;
 		int strNo = strs.length;
-		int maxLen = Integer.MAX_VALUE;
+		int minLen = Integer.MAX_VALUE;
 		
 		for(String s:strs) {
-			maxLen = Math.min(maxLen, s.length());
+			minLen = Math.min(minLen, s.length());
 		}
 		
-		while(length < maxLen) {
+		while(length < minLen) {
 			for(int i = 1; i < strNo; i ++) {
 				if(strs[0].charAt(length) != strs[i].charAt(length)) {
 					return strs[0].substring(0,length);
@@ -28,8 +27,7 @@ public class LongestCommonPrefix {
 			}
 			length ++;
 		}
-		return strs[0].substring(0,length+1);
-		 
+		return strs[0].substring(0,length);		 
 	}
 	
 	public String longestCommonPrefix2(String[] strs) {
@@ -49,15 +47,15 @@ public class LongestCommonPrefix {
 	}
 	
 	public static void main(String[] args) {
-		String str1 = "asfewage";
-		String str2 = "aabsdsfewwagnejnljgle";
-		String str3 = "aafgesdsfewwage";
+		String str1 = "";
+		String str2 = "";
+		String str3 = "";
 		
 		String[] strs = {str1,str2,str3};
 		
 		LongestCommonPrefix test = new LongestCommonPrefix();
 		System.out.println(test.longestCommonPrefix(strs));
-		System.out.println(test.longestCommonPrefix2(strs));
+		// System.out.println(test.longestCommonPrefix2(strs));
 
 	}
 }
