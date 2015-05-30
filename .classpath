@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="1_Arrays_and_Strings/src"/>
+	<classpathentry kind="src" path="2_Linked_List/src"/>
+	<classpathentry kind="src" path="3_Stacks_and_Queues/src"/>
+	<classpathentry kind="src" path="LeetCode/src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="LeetCode/bin"/>
+</classpath>
