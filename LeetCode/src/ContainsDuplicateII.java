@@ -46,6 +46,5 @@ public class ContainsDuplicateII {
  
     	System.out.println(test.containsNearbyDuplicate(nums, k));
     	System.out.println(test.containsNearbyDuplicate2(nums, k));
-
     }
 }
